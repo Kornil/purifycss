@@ -5,3 +5,15 @@
 .button.\+rounded {
   color: black;
 }
+
+.width-100 {
+  width: 100%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-0 {
+  width: 0%;
+}

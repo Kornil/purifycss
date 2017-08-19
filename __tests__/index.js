@@ -32,7 +32,7 @@ describe("callback", () => {
     })
 })
 
-describe("classes that are added together", () => {
+/* describe("classes that are added together", () => {
     const content = read("combined/combined.js"),
         css = read("combined/combined.css"),
         result = purify(content, css)
@@ -44,7 +44,7 @@ describe("classes that are added together", () => {
     it("can find .array-joined", () => {
         expect(result.includes(".array-joined") === true).toBe(true)
     })
-})
+}) */
 
 describe("filters out unused selectors", () => {
     const content = read("remove_unused/remove_unused.js"),
@@ -189,6 +189,18 @@ describe("special characters", () => {
 
     it("finds button", () => {
         expect(result.includes("button") === true).toBe(true)
+    })
+
+    it("finds width-50", () => {
+        expect(result.includes("width-50") === true).toBe(true)
+    })
+
+    it("does not remove width-100", () => {
+        expect(result.includes("width-100") === true).toBe(false)
+    })
+
+    it("does not remove width-0", () => {
+        expect(result.includes("width-0") === true).toBe(false)
     })
 })
 

@@ -3,3 +3,5 @@
 '+rounded'
 
 'button'
+
+'width-50'

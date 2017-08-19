@@ -8,7 +8,7 @@ export const getAllWordsInContent = content => {
         html: true,
         body: true
     }
-    const words = content.split(/[^a-z]/g)
+    const words = content.split(/[^_a-z0-9-]/g)
     for (let word of words) {
         used[word] = true
     }
@@ -36,7 +36,7 @@ export const getAllWordsInSelector = selector => {
             skipNextWord = true
             continue
         }
-        if (/[a-z]/.test(letter)) {
+        if (/[_a-z0-9-]/.test(letter)) {
             word += letter
         } else {
             addWord(words, word)
